@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+    /* Brand Colors */
+    --color-brand-maroon: #5B0013;
+    --color-brand-gold: #D4AF37;
+    --color-brand-cream: #F8F4EC;
+    --color-brand-gold-light: #F2D48E;
+    --color-brand-dark: #2A0009;
+
+    /* Typography */
+    --font-heading: "Cormorant Garamond", serif;
+    --font-body: "Montserrat", sans-serif;
+
+    /* Transitions */
+    --transition-luxury: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@layer base {
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-heading tracking-wider;
+    }
+}
+
+@layer components {
+    .btn-gold {
+        @apply bg-brand-gold text-white px-8 py-3 font-body text-sm uppercase tracking-widest transition-luxury border border-brand-gold hover:bg-transparent hover:text-brand-gold;
+    }
+
+    .btn-outline-gold {
+        @apply border border-brand-gold text-brand-gold px-8 py-3 font-body text-sm uppercase tracking-widest transition-luxury hover:bg-brand-gold hover:text-white;
+    }
+
+    .gold-glow {
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    }
+
+    .gold-glow-hover:hover {
+        box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+    }
+
+    .text-gradient-gold {
+        @apply bg-clip-text text-transparent bg-linear-to-r from-brand-gold via-brand-gold-light to-brand-gold;
+    }
+
+    .section-title {
+        @apply text-4xl md:text-5xl font-heading text-center mb-12 relative;
+    }
+
+    .section-title::after {
+        content: '';
+        @apply absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-0.5 bg-brand-gold;
+    }
+}
+
+/* Custom Utilities */
+.parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.luxury-card {
+    @apply bg-white transition-luxury overflow-hidden;
+    box-shadow: 0 10px 30px rgba(91, 0, 19, 0.05);
+}
+
+.luxury-card:hover {
+    @apply -translate-y-2;
+    box-shadow: 0 20px 40px rgba(91, 0, 19, 0.1);
+}
