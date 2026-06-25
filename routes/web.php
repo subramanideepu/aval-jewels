@@ -22,6 +22,8 @@ Route::get('/collections', function () {
 
 Route::get('/products/{slug}', \App\Livewire\Products\ProductDetails::class)->name('products.show');
 
+Route::get('/checkout', \App\Livewire\Checkout::class)->name('checkout');
+
 Route::get('/about', function () {
     return view('about');
 });

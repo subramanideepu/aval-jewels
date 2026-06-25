@@ -2,8 +2,8 @@
     <!-- Background Image -->
     <div class="absolute inset-0 z-0">
         <img src="{{ $image }}" alt="{{ $title }}" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-brand-maroon/40 bg-gradient-to-t from-brand-maroon via-transparent to-brand-maroon/40"></div>
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(91,0,19,0.4)_100%)]"></div>
+        <div class="absolute inset-0 bg-brand-green/40 bg-gradient-to-t from-brand-green via-transparent to-brand-green/40"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(36,46,28,0.4)_100%)]"></div>
     </div>
     
     <!-- Content -->
@@ -36,7 +36,7 @@
                 <span class="relative z-10">{{ $ctaText }}</span>
                 <div class="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
             </a>
-            <a href="/about" class="text-white hover:text-brand-gold transition-all duration-500 font-body text-[0.65rem] uppercase tracking-[0.4em] border-b border-white/20 pb-2 hover:border-brand-gold">
+            <a href="{{ url('/about') }}" class="text-white hover:text-brand-gold transition-all duration-500 font-body text-[0.65rem] uppercase tracking-[0.4em] border-b border-white/20 pb-2 hover:border-brand-gold">
                 The Legacy
             </a>
         </div>

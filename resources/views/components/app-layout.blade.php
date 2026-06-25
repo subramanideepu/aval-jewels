@@ -92,6 +92,8 @@
 
     <x-whatsapp-button />
 
+    <livewire:cart.cart-drawer />
+
     @livewireScripts
 </body>
 </html>

@@ -1,4 +1,4 @@
-<section class="py-32 bg-brand-maroon relative overflow-hidden">
+<section class="py-32 bg-brand-green relative overflow-hidden">
     <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: url('https://www.transparenttextures.com/patterns/black-linen.png');"></div>
     
     <div class="container mx-auto px-6 relative z-10">

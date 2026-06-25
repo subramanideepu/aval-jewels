@@ -22,6 +22,10 @@ class Product extends Model
         'is_best_seller',
         'meta_title',
         'meta_description',
+        'price',
+        'sale_price',
+        'stock',
+        'purity_options',
     ];
 
     protected $casts = [
@@ -29,6 +33,10 @@ class Product extends Model
         'gallery' => 'array',
         'is_featured' => 'boolean',
         'is_best_seller' => 'boolean',
+        'price' => 'decimal:2',
+        'sale_price' => 'decimal:2',
+        'stock' => 'integer',
+        'purity_options' => 'array',
     ];
 
     public function collection(): BelongsTo

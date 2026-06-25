@@ -3,6 +3,7 @@
 namespace App\Livewire\Products;
 
 use App\Models\Product;
+use App\Services\CartService;
 use Illuminate\Support\Str;
 use Livewire\Component;
 
@@ -10,6 +11,8 @@ class ProductDetails extends Component
 {
     public $product;
     public $relatedProducts;
+    public $quantity = 1;
+    public $purity = '22K';
 
     public function mount($slug)
     {
@@ -19,6 +22,16 @@ class ProductDetails extends Component
             ->where('id', '!=', $this->product->id)
             ->take(4)
             ->get();
+    }
+
+    public function addToCart(CartService $cartService)
+    {
+        $cartService->add($this->product->id, $this->quantity, $this->purity);
+        
+        $this->dispatch('cartUpdated');
+        $this->dispatch('openCart');
+        
+        session()->flash('cart_success', 'Added to cart successfully!');
     }
 
     public function render()

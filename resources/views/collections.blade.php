@@ -9,19 +9,6 @@
         </div>
     </section>
 
-    <!-- Filters placeholder -->
-    <div class="bg-brand-cream border-b border-brand-green/5 sticky top-20 z-40">
-        <div class="container mx-auto px-6 py-8">
-            <div class="flex flex-wrap items-center justify-center space-x-12">
-                <a href="#" class="text-[0.65rem] uppercase tracking-widest font-bold border-b-2 border-brand-gold pb-1">All Pieces</a>
-                <a href="#" class="text-[0.65rem] uppercase tracking-widest text-brand-green/40 hover:text-brand-green transition-colors font-bold">Bridal</a>
-                <a href="#" class="text-[0.65rem] uppercase tracking-widest text-brand-green/40 hover:text-brand-green transition-colors font-bold">Earrings</a>
-                <a href="#" class="text-[0.65rem] uppercase tracking-widest text-brand-green/40 hover:text-brand-green transition-colors font-bold">Necklaces</a>
-                <a href="#" class="text-[0.65rem] uppercase tracking-widest text-brand-green/40 hover:text-brand-green transition-colors font-bold">Bangles</a>
-            </div>
-        </div>
-    </div>
-
     <livewire:collections.collection-grid />
 
     <!-- CTA Section -->

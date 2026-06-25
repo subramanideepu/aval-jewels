@@ -3,9 +3,9 @@
         <div class="flex flex-col md:flex-row justify-between items-end mb-20">
             <div class="max-w-xl">
                 <span class="text-brand-gold text-[0.6rem] uppercase tracking-[0.5em] mb-4 block font-bold">Curated for Excellence</span>
-                <h2 class="text-4xl md:text-6xl font-heading text-brand-maroon leading-tight">Masterpieces of Artistry</h2>
+                <h2 class="text-4xl md:text-6xl font-heading text-brand-green leading-tight">Masterpieces of Artistry</h2>
             </div>
-            <a href="/collections" class="text-brand-gold hover:text-brand-maroon transition-all duration-500 font-body text-[0.65rem] uppercase tracking-[0.3em] border-b border-brand-gold/30 pb-2 hover:border-brand-maroon mt-8 md:mt-0">
+            <a href="{{ url('/collections') }}" class="text-brand-gold hover:text-brand-green transition-all duration-500 font-body text-[0.65rem] uppercase tracking-[0.3em] border-b border-brand-gold/30 pb-2 hover:border-brand-green mt-8 md:mt-0">
                 View All Collections
             </a>
         </div>
@@ -16,7 +16,7 @@
                     :title="$col->name" 
                     :image="asset($col->image)" 
                     category="Collection" 
-                    :link="'/collections?slug='.$col->slug" 
+                    :link="url('/collections?slug='.$col->slug)" 
                 />
             @endforeach
         </div>

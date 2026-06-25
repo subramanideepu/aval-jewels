@@ -1,7 +1,7 @@
 <nav id="main-nav" 
      x-data="{ open: false, scrolled: false }" 
      x-init="window.addEventListener('scroll', () => scrolled = window.scrollY > 50)"
-     :class="scrolled ? 'bg-brand-maroon/95 backdrop-blur-md py-3 shadow-2xl shadow-brand-dark/30' : 'bg-transparent py-6'"
+     :class="scrolled ? 'bg-brand-green/90 backdrop-blur-lg py-3 shadow-2xl border-b border-brand-gold/10 shadow-brand-dark/30' : 'bg-transparent py-6'"
      class="fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out">
     <div class="container mx-auto px-6 flex justify-between items-center">
         <!-- Logo -->
@@ -24,7 +24,9 @@
         </div>
 
         <!-- Icons/CTA -->
-        <div class="flex items-center space-x-8">
+        <div class="flex items-center space-x-6 md:space-x-8">
+            <livewire:cart.cart-icon />
+
             <a href="{{ url('/contact') }}" class="hidden md:inline-flex bg-transparent border border-brand-gold text-brand-gold px-8 py-2.5 text-[0.6rem] uppercase tracking-widest font-bold hover:bg-brand-gold hover:text-brand-green transition-all duration-500 shadow-lg shadow-brand-gold/10">
                 Book Appointment
             </a>
