@@ -2,7 +2,7 @@
 
     <livewire:home.hero-section />
     
-    <section class="py-24 bg-brand-maroon text-white text-center">
+    <section class="py-24 bg-brand-green text-white text-center">
         <div class="container mx-auto px-6 max-w-4xl">
             <h2 class="text-3xl md:text-5xl font-heading mb-8">Wear Your Confidence</h2>
             <p class="text-brand-cream/60 text-lg font-body leading-relaxed">
@@ -47,11 +47,11 @@
         </div>
     </section>
 
-    <section class="py-32 bg-brand-maroon text-white text-center relative overflow-hidden">
+    <section class="py-32 bg-brand-green text-white text-center relative overflow-hidden">
         <div class="container mx-auto px-6 relative z-10">
             <h2 class="text-4xl md:text-6xl font-heading mb-10">Experience True Luxury</h2>
             <p class="text-brand-gold text-sm font-body uppercase tracking-[0.3em] mb-12">Visit our boutique for a personalized consultation.</p>
-            <a href="/contact" class="btn-gold">Book Appointment</a>
+            <a href="{{ url('/contact') }}" class="btn-gold">Book Appointment</a>
         </div>
     </section>
 </x-app-layout>

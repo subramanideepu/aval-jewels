@@ -4,7 +4,7 @@
     <section class="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
             <img src="{{ asset('images/craftsmanship.png') }}" alt="Our Story" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-brand-maroon/60"></div>
+            <div class="absolute inset-0 bg-brand-green/60"></div>
         </div>
         <div class="container mx-auto px-6 relative z-10 text-center">
             <span class="text-brand-gold text-[0.6rem] uppercase tracking-[0.6em] mb-8 block font-bold">EST. 1990</span>
@@ -15,7 +15,7 @@
     <livewire:about.brand-story />
 
     <!-- Timeline/Values -->
-    <section class="py-32 bg-brand-maroon text-white">
+    <section class="py-32 bg-brand-green text-white">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
                 <div class="space-y-6">
@@ -39,6 +39,6 @@
 
     <!-- Visual Divider -->
     <div class="h-96 w-full bg-fixed bg-center bg-cover" style="background-image: url('{{ asset('images/hero.png') }}')">
-        <div class="w-full h-full bg-brand-maroon/40 backdrop-blur-[2px]"></div>
+        <div class="w-full h-full bg-brand-green/40 backdrop-blur-[2px]"></div>
     </div>
 </x-app-layout>

@@ -11,7 +11,7 @@
                 </p>
                 <div class="flex space-x-5">
                     @foreach(['facebook', 'instagram', 'whatsapp'] as $social)
-                        <a href="#" class="w-10 h-10 border border-brand-gold/20 flex items-center justify-center rounded-full hover:bg-brand-gold hover:text-brand-maroon hover:border-brand-gold transition-all duration-500 text-brand-gold/60">
+                        <a href="#" class="w-10 h-10 border border-brand-gold/20 flex items-center justify-center rounded-full hover:bg-brand-gold hover:text-brand-green hover:border-brand-gold transition-all duration-500 text-brand-gold/60">
                             <span class="sr-only">{{ $social }}</span>
                             <i class="fab fa-{{ $social }} text-sm"></i>
                         </a>
@@ -28,7 +28,7 @@
                 <ul class="space-y-4">
                     @foreach(['Home' => '/', 'Collections' => '/collections', 'Our Story' => '/about', 'Contact' => '/contact'] as $name => $link)
                         <li>
-                            <a href="{{ $link }}" class="text-brand-cream/60 hover:text-brand-gold transition-colors text-sm font-body uppercase tracking-[0.2em] flex items-center group">
+                            <a href="{{ url($link) }}" class="text-brand-cream/60 hover:text-brand-gold transition-colors text-sm font-body uppercase tracking-[0.2em] flex items-center group">
                                 <span class="w-0 h-px bg-brand-gold mr-0 transition-all duration-300 group-hover:w-4 group-hover:mr-3"></span>
                                 {{ $name }}
                             </a>
@@ -69,7 +69,7 @@
                 <p class="text-brand-cream/50 text-sm font-body mb-6">Receive exclusive previews and jewelry insights.</p>
                 <form class="space-y-4">
                     <div class="relative">
-                        <input type="email" placeholder="Your Email" class="w-full bg-brand-maroon/20 border-b border-brand-gold/30 px-0 py-3 text-white focus:outline-none focus:border-brand-gold transition-colors placeholder:text-brand-cream/20 text-sm font-body">
+                        <input type="email" placeholder="Your Email" class="w-full bg-brand-green/20 border-b border-brand-gold/30 px-0 py-3 text-white focus:outline-none focus:border-brand-gold transition-colors placeholder:text-brand-cream/20 text-sm font-body">
                         <button type="submit" class="absolute right-0 top-3 text-brand-gold hover:translate-x-1 transition-transform">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />

@@ -2,11 +2,11 @@
     <div class="container mx-auto px-6">
         <!-- Breadcrumbs -->
         <nav class="flex mb-12 text-[0.6rem] uppercase tracking-widest font-bold">
-            <a href="/" class="text-brand-maroon/40 hover:text-brand-gold transition-colors">Home</a>
+            <a href="{{ url('/') }}" class="text-brand-green/40 hover:text-brand-gold transition-colors">Home</a>
             <span class="mx-4 text-brand-gold">/</span>
-            <a href="/collections" class="text-brand-maroon/40 hover:text-brand-gold transition-colors">Collections</a>
+            <a href="{{ url('/collections') }}" class="text-brand-green/40 hover:text-brand-gold transition-colors">Collections</a>
             <span class="mx-4 text-brand-gold">/</span>
-            <span class="text-brand-maroon">{{ $product->name }}</span>
+            <span class="text-brand-green">{{ $product->name }}</span>
         </nav>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">

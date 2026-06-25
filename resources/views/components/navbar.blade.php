@@ -15,7 +15,7 @@
                 ['name' => 'Our Story', 'link' => '/about'],
                 ['name' => 'Contact', 'link' => '/contact']
             ] as $item)
-                <a href="{{ $item['link'] }}" 
+                <a href="{{ url($item['link']) }}" 
                    class="relative text-[0.7rem] font-body text-white uppercase tracking-widest transition-colors hover:text-brand-gold group {{ Request::is(trim($item['link'], '/') ?: '/') ? 'text-brand-gold' : '' }}">
                     {{ $item['name'] }}
                     <span class="absolute -bottom-1 left-0 w-0 h-px bg-brand-gold transition-all duration-300 group-hover:w-full {{ Request::is(trim($item['link'], '/') ?: '/') ? 'w-full' : '' }}"></span>
@@ -25,7 +25,7 @@
 
         <!-- Icons/CTA -->
         <div class="flex items-center space-x-8">
-            <a href="/contact" class="hidden md:inline-flex bg-transparent border border-brand-gold text-brand-gold px-8 py-2.5 text-[0.6rem] uppercase tracking-widest font-bold hover:bg-brand-gold hover:text-brand-maroon transition-all duration-500 shadow-lg shadow-brand-gold/10">
+            <a href="{{ url('/contact') }}" class="hidden md:inline-flex bg-transparent border border-brand-gold text-brand-gold px-8 py-2.5 text-[0.6rem] uppercase tracking-widest font-bold hover:bg-brand-gold hover:text-brand-green transition-all duration-500 shadow-lg shadow-brand-gold/10">
                 Book Appointment
             </a>
 
@@ -47,7 +47,7 @@
              x-transition:leave="transition ease-in duration-300"
              x-transition:leave-start="opacity-100"
              x-transition:leave-end="opacity-0"
-             class="fixed inset-0 bg-brand-maroon z-[100] flex flex-col items-center justify-center p-6"
+             class="fixed inset-0 bg-brand-green z-[100] flex flex-col items-center justify-center p-6"
              style="display: none;">
             
             <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: url('https://www.transparenttextures.com/patterns/black-linen.png');"></div>
@@ -62,13 +62,13 @@
                 <!-- Mobile Logo -->
                 <x-brand-logo size="lg" :link="false" class="mb-6" />
 
-                <a href="/" @click="open = false" class="text-2xl font-heading text-white hover:text-brand-gold transition-colors tracking-widest">HOME</a>
-                <a href="/collections" @click="open = false" class="text-2xl font-heading text-white hover:text-brand-gold transition-colors tracking-widest">COLLECTIONS</a>
-                <a href="/about" @click="open = false" class="text-2xl font-heading text-white hover:text-brand-gold transition-colors tracking-widest">OUR STORY</a>
-                <a href="/contact" @click="open = false" class="text-2xl font-heading text-white hover:text-brand-gold transition-colors tracking-widest">CONTACT</a>
+                <a href="{{ url('/') }}" @click="open = false" class="text-2xl font-heading text-white hover:text-brand-gold transition-colors tracking-widest">HOME</a>
+                <a href="{{ url('/collections') }}" @click="open = false" class="text-2xl font-heading text-white hover:text-brand-gold transition-colors tracking-widest">COLLECTIONS</a>
+                <a href="{{ url('/about') }}" @click="open = false" class="text-2xl font-heading text-white hover:text-brand-gold transition-colors tracking-widest">OUR STORY</a>
+                <a href="{{ url('/contact') }}" @click="open = false" class="text-2xl font-heading text-white hover:text-brand-gold transition-colors tracking-widest">CONTACT</a>
                 
                 <div class="pt-8">
-                    <a href="/contact" @click="open = false" class="bg-brand-gold text-brand-maroon px-12 py-4 text-xs font-bold uppercase tracking-[0.3em] hover:bg-white transition-colors">
+                    <a href="{{ url('/contact') }}" @click="open = false" class="bg-brand-gold text-brand-green px-12 py-4 text-xs font-bold uppercase tracking-[0.3em] hover:bg-white transition-colors">
                         Enquire Now
                     </a>
                 </div>

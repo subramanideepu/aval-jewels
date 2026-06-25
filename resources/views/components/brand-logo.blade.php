@@ -17,7 +17,7 @@
 @endphp
 
 @if($link)
-<a href="/" class="inline-block group {{ $class }}" aria-label="AVAL JEWELS - Tradition. Elegance. You.">
+<a href="{{ url('/') }}" class="inline-block group {{ $class }}" aria-label="AVAL JEWELS - Tradition. Elegance. You.">
     <img 
         src="{{ asset('assets/images/branding/aval-jewels-logo.png') }}" 
         alt="AVAL JEWELS - Tradition. Elegance. You." 

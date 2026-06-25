@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-    /* Brand Colors */
-    --color-brand-maroon: #5B0013;
-    --color-brand-gold: #D4AF37;
-    --color-brand-cream: #F8F4EC;
-    --color-brand-gold-light: #F2D48E;
-    --color-brand-dark: #2A0009;
+    /* Brand Colors matching new Logo */
+    --color-brand-maroon: #242E1C; /* Keep legacy name for compatibility */
+    --color-brand-green: #242E1C;  /* New clean naming */
+    --color-brand-gold: #C5A059;   /* Warm antique luxury gold */
+    --color-brand-cream: #FAF8F5;  /* Premium soft cream background */
+    --color-brand-gold-light: #E3C68F;
+    --color-brand-dark: #192013;   /* Extrablack olive green */
 
     /* Typography */
     --font-heading: "Cormorant Garamond", serif;
@@ -63,10 +64,10 @@
 
 .luxury-card {
     @apply bg-white transition-luxury overflow-hidden;
-    box-shadow: 0 10px 30px rgba(91, 0, 19, 0.05);
+    box-shadow: 0 10px 30px rgba(36, 46, 28, 0.05);
 }
 
 .luxury-card:hover {
     @apply -translate-y-2;
-    box-shadow: 0 20px 40px rgba(91, 0, 19, 0.1);
+    box-shadow: 0 20px 40px rgba(36, 46, 28, 0.1);
 }

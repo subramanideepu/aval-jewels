@@ -24,10 +24,11 @@
                 extend: {
                     colors: {
                         brand: {
-                            maroon: '#5B0013',
-                            gold: '#D4AF37',
-                            cream: '#FFFDF7',
-                            dark: '#2C0009',
+                            maroon: '#242E1C', // Map legacy maroon class names to new dark green
+                            green: '#242E1C',  // New brand olive green
+                            gold: '#C5A059',   // Antique luxury gold
+                            cream: '#FAF8F5',  // Premium cream
+                            dark: '#192013',   // Extrablack olive green
                         }
                     },
                     fontFamily: {
@@ -44,7 +45,7 @@
         .font-body { font-family: 'Outfit', sans-serif; }
     </style>
 </head>
-<body class="bg-brand-maroon font-body antialiased selection:bg-brand-gold selection:text-brand-maroon">
+<body class="bg-brand-green font-body antialiased selection:bg-brand-gold selection:text-brand-green">
     <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
         <div class="mb-8">
             <x-brand-logo size="xl" />

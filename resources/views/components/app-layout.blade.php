@@ -44,10 +44,11 @@
                 extend: {
                     colors: {
                         brand: {
-                            maroon: '#5B0013',
-                            gold: '#D4AF37',
-                            cream: '#FFFDF7',
-                            dark: '#2C0009',
+                            maroon: '#242E1C', // Map legacy maroon class names to new dark green
+                            green: '#242E1C',  // New brand olive green
+                            gold: '#C5A059',   // Antique luxury gold
+                            cream: '#FAF8F5',  // Premium cream
+                            dark: '#192013',   // Extrablack olive green
                         }
                     },
                     fontFamily: {
@@ -62,17 +63,18 @@
 
     <style>
         :root {
-            --brand-maroon: #5B0013;
-            --brand-gold: #D4AF37;
-            --brand-cream: #FFFDF7;
-            --brand-dark: #2C0009;
+            --brand-maroon: #242E1C;
+            --brand-green: #242E1C;
+            --brand-gold: #C5A059;
+            --brand-cream: #FAF8F5;
+            --brand-dark: #192013;
         }
 
         .font-heading { font-family: 'Playfair Display', serif; }
         .font-body { font-family: 'Outfit', sans-serif; }
 
         .btn-gold {
-            @apply inline-flex bg-brand-gold text-brand-maroon px-12 py-4 text-[0.7rem] uppercase tracking-[0.4em] font-bold transition-all duration-500 shadow-xl shadow-brand-gold/10 hover:shadow-brand-gold/20 hover:scale-105;
+            @apply inline-flex bg-brand-gold text-brand-green px-12 py-4 text-[0.7rem] uppercase tracking-[0.4em] font-bold transition-all duration-500 shadow-xl shadow-brand-gold/10 hover:shadow-brand-gold/20 hover:scale-105;
         }
 
         [x-cloak] { display: none !important; }
