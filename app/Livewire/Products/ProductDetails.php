@@ -14,10 +14,17 @@ class ProductDetails extends Component
     public $quantity = 1;
     public $purity = '22K';
 
+    public $whatsappNumber = '';
+
     public function mount($slug)
     {
         $this->product = Product::where('slug', $slug)->firstOrFail();
         
+        $this->whatsappNumber = \App\Models\SiteSetting::where('key', 'whatsapp_number')->value('value') ?? '+919876543210';
+        
+        // Strip non-numeric characters for the wa.me link
+        $this->whatsappNumber = preg_replace('/[^0-9]/', '', $this->whatsappNumber);
+
         $this->relatedProducts = Product::where('collection_id', $this->product->collection_id)
             ->where('id', '!=', $this->product->id)
             ->take(4)

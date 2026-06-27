@@ -20,6 +20,8 @@ class Checkout extends Component
     public $isSubmitted = false;
     public $placedOrder = null;
 
+    public $whatsappNumber = '';
+
     protected $rules = [
         'name' => 'required|string|min:3',
         'email' => 'required|email',
@@ -32,6 +34,9 @@ class Checkout extends Component
     {
         $this->cartItems = $cartService->get();
         $this->total = $cartService->totalAmount();
+
+        $rawNumber = \App\Models\SiteSetting::where('key', 'whatsapp_number')->value('value') ?? '+919876543210';
+        $this->whatsappNumber = preg_replace('/[^0-9]/', '', $rawNumber);
 
         if (count($this->cartItems) === 0) {
             return redirect()->to(url('/collections'));
@@ -79,7 +84,7 @@ class Checkout extends Component
             $msg .= "Phone: {$this->phone}\n";
             $msg .= "Delivery Address: {$this->address}";
 
-            $url = "https://wa.me/919876543210?text=" . urlencode($msg);
+            $url = "https://wa.me/{$this->whatsappNumber}?text=" . urlencode($msg);
             
             // Clear cart
             $cartService->clear();

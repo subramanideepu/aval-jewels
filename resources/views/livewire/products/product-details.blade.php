@@ -11,19 +11,38 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
             <!-- Product Gallery -->
-            <div x-data="{ activeImage: '{{ asset($product->image) }}' }" class="space-y-6">
-                <div class="aspect-[4/5] bg-brand-green overflow-hidden relative group">
-                    <img :src="activeImage" alt="{{ $product->name }}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-brand-green/10"></div>
+            <div x-data="{ 
+                activeImage: '{{ asset($product->image) }}',
+                zoom: false,
+                zoomX: 0,
+                zoomY: 0,
+                handleMove(e) {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    const x = ((e.clientX - rect.left) / rect.width) * 100;
+                    const y = ((e.clientY - rect.top) / rect.height) * 100;
+                    this.zoomX = x;
+                    this.zoomY = y;
+                }
+            }" class="space-y-6">
+                <!-- Magnifying Lens Container -->
+                <div class="aspect-[4/5] bg-brand-green overflow-hidden relative border border-brand-gold/10 group cursor-zoom-in rounded-sm"
+                     @mouseenter="zoom = true" 
+                     @mouseleave="zoom = false"
+                     @mousemove="handleMove($event)">
+                    <img :src="activeImage" alt="{{ $product->name }}" 
+                         class="w-full h-full object-cover transition-transform duration-200"
+                         :class="zoom ? 'scale-[1.8]' : 'scale-100'"
+                         :style="zoom ? `transform-origin: ${zoomX}% ${zoomY}%` : ''">
+                    <div class="absolute inset-0 bg-brand-green/5 pointer-events-none"></div>
                 </div>
                 
                 @if($product->gallery && count($product->gallery) > 0)
                 <div class="grid grid-cols-4 gap-4">
-                    <button @click="activeImage = '{{ asset($product->image) }}'" class="aspect-square bg-brand-green overflow-hidden opacity-60 hover:opacity-100 transition-opacity" :class="activeImage === '{{ asset($product->image) }}' ? 'opacity-100 ring-2 ring-brand-gold' : ''">
+                    <button @click="activeImage = '{{ asset($product->image) }}'" class="aspect-square bg-brand-green overflow-hidden opacity-60 hover:opacity-100 transition-opacity border border-brand-gold/10" :class="activeImage === '{{ asset($product->image) }}' ? 'opacity-100 ring-2 ring-brand-gold' : ''">
                         <img src="{{ asset($product->image) }}" class="w-full h-full object-cover">
                     </button>
                     @foreach($product->gallery as $img)
-                    <button @click="activeImage = '{{ asset($img) }}'" class="aspect-square bg-brand-green overflow-hidden opacity-60 hover:opacity-100 transition-opacity" :class="activeImage === '{{ asset($img) }}' ? 'opacity-100 ring-2 ring-brand-gold' : ''">
+                    <button @click="activeImage = '{{ asset($img) }}'" class="aspect-square bg-brand-green overflow-hidden opacity-60 hover:opacity-100 transition-opacity border border-brand-gold/10" :class="activeImage === '{{ asset($img) }}' ? 'opacity-100 ring-2 ring-brand-gold' : ''">
                         <img src="{{ asset($img) }}" class="w-full h-full object-cover">
                     </button>
                     @endforeach
@@ -35,41 +54,44 @@
             <div class="space-y-12">
                 <div>
                     <span class="text-brand-gold text-[0.7rem] uppercase tracking-[0.5em] font-bold mb-4 block">{{ $product->collection->name ?? 'Exquisite Collection' }}</span>
-                    <h1 class="text-5xl md:text-7xl font-heading text-brand-green leading-tight">{{ $product->name }}</h1>
+                    <h1 class="text-4xl md:text-6xl font-heading text-brand-green leading-tight">{{ $product->name }}</h1>
                 </div>
 
                 <!-- Estimated Price -->
-                <div class="flex items-baseline space-x-4">
-                    @if($product->sale_price)
-                        <span class="text-4xl font-body font-bold text-brand-green">
-                            ₹{{ number_format($purity === '18K' ? ($product->sale_price * 0.85) : $product->sale_price) }}
-                        </span>
-                        <span class="text-xl text-brand-green/40 line-through">
-                            ₹{{ number_format($purity === '18K' ? ($product->price * 0.85) : $product->price) }}
-                        </span>
-                    @else
-                        <span class="text-4xl font-body font-bold text-brand-green">
-                            ₹{{ number_format($purity === '18K' ? ($product->price * 0.85) : $product->price) }}
-                        </span>
-                    @endif
-                    <span class="text-xs text-brand-gold uppercase tracking-widest font-bold">Estimated Price</span>
+                <div class="bg-white p-6 border-l-4 border-brand-gold shadow-lg shadow-brand-green/5">
+                    <div class="flex items-baseline space-x-4">
+                        @if($product->sale_price)
+                            <span class="text-4xl font-body font-bold text-brand-green">
+                                ₹{{ number_format($purity === '18K' ? ($product->sale_price * 0.85) : $product->sale_price) }}
+                            </span>
+                            <span class="text-lg text-brand-green/40 line-through">
+                                ₹{{ number_format($purity === '18K' ? ($product->price * 0.85) : $product->price) }}
+                            </span>
+                        @else
+                            <span class="text-4xl font-body font-bold text-brand-green">
+                                ₹{{ number_format($purity === '18K' ? ($product->price * 0.85) : $product->price) }}
+                            </span>
+                        @endif
+                        <span class="text-[0.6rem] text-brand-gold uppercase tracking-[0.2em] font-bold">Estimated Price</span>
+                    </div>
+                    <p class="text-[0.65rem] text-brand-green/50 mt-2">Price updates dynamically based on gold purity choice.</p>
                 </div>
 
                 <div class="prose prose-brand max-w-none">
-                    <p class="text-brand-green/70 text-lg font-body leading-relaxed font-light">
+                    <p class="text-brand-green/70 text-base font-body leading-relaxed font-light">
                         {!! $product->description !!}
                     </p>
                 </div>
 
                 <!-- Specifications -->
                 @if($product->specifications && count($product->specifications) > 0)
-                <div class="border-y border-brand-green/10 py-10">
-                    <h3 class="text-brand-green font-heading text-2xl mb-8">Specifications</h3>
-                    <div class="grid grid-cols-2 gap-x-12 gap-y-6">
+                <div class="border-y border-brand-green/10 py-8">
+                    <h3 class="text-brand-green font-heading text-xl mb-6">Specifications</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
                         @foreach($product->specifications as $label => $value)
                         <div class="flex justify-between items-center border-b border-brand-green/5 pb-2">
-                            <span class="text-[0.6rem] uppercase tracking-widest text-brand-green/40 font-bold">{{ $label }}</span>
-                            <span class="text-sm font-body text-brand-green font-medium">{{ $value }}</span>
+                            <span class="text-[0.6rem] uppercase tracking-widest text-brand-green/45 font-bold">{{ $label }}</span>
+                            <span class="text-xs font-body text-brand-green font-medium">{{ $value }}</span>
                         </div>
                         @endforeach
                     </div>
@@ -82,7 +104,7 @@
                     <div class="space-y-3">
                         <label class="text-[0.6rem] uppercase tracking-widest text-brand-green/60 font-bold block">Select Metal Purity</label>
                         <div class="relative">
-                            <select wire:model.live="purity" class="w-full bg-transparent border border-brand-green/20 px-4 py-3 focus:outline-none focus:border-brand-gold transition-colors font-body text-brand-green appearance-none pr-10">
+                            <select wire:model.live="purity" class="w-full bg-transparent border border-brand-green/20 px-4 py-3 focus:outline-none focus:border-brand-gold transition-colors font-body text-xs text-brand-green appearance-none pr-10">
                                 @foreach($product->purity_options ?? ['18K', '22K'] as $option)
                                     <option value="{{ $option }}">{{ $option }} Hallmarked Gold</option>
                                 @endforeach
@@ -96,25 +118,29 @@
                     <!-- Quantity Selection -->
                     <div class="space-y-3">
                         <label class="text-[0.6rem] uppercase tracking-widest text-brand-green/60 font-bold block">Quantity</label>
-                        <div class="flex items-center border border-brand-green/20 h-[46px] w-32 bg-brand-green/5">
-                            <button type="button" @click="$wire.quantity > 1 ? $wire.quantity-- : null" class="px-4 py-2 text-brand-green/60 hover:text-brand-green font-bold transition-colors">-</button>
-                            <input type="text" wire:model="quantity" readonly class="w-12 text-center bg-transparent border-none font-bold text-brand-green font-body text-sm focus:outline-none focus:ring-0">
-                            <button type="button" @click="$wire.quantity++" class="px-4 py-2 text-brand-green/60 hover:text-brand-green font-bold transition-colors">+</button>
+                        <div class="flex items-center border border-brand-green/20 h-[46px] w-32 bg-white">
+                            <button type="button" wire:click="$set('quantity', {{ max(1, $quantity - 1) }})" class="px-4 py-2 text-brand-green/60 hover:text-brand-green font-bold transition-colors">-</button>
+                            <span class="w-12 text-center bg-transparent border-none font-bold text-brand-green font-body text-sm">{{ $quantity }}</span>
+                            <button type="button" wire:click="$set('quantity', {{ $quantity + 1 }})" class="px-4 py-2 text-brand-green/60 hover:text-brand-green font-bold transition-colors">+</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Add to Bag & Checkout Actions -->
                 <div class="flex flex-col sm:flex-row gap-6 pt-4">
-                    <button wire:click="addToCart" class="flex-1 btn-gold justify-center group relative overflow-hidden text-center py-4">
-                        <i class="fas fa-shopping-cart mr-4 text-lg"></i>
+                    <button wire:click="addToCart" class="flex-1 btn-gold justify-center group relative overflow-hidden text-center py-4 rounded-sm flex items-center">
+                        <i class="fas fa-shopping-bag mr-3 text-sm"></i>
                         <span>Add to bag</span>
                     </button>
                     
-                    <a href="https://wa.me/919876543210?text=I am interested in ordering: {{ $product->name }} (Purity: {{ $purity }}, Qty: {{ $quantity }}) - {{ url()->current() }}" 
+                    @php
+                        $calculatedPrice = $product->sale_price ? ($purity === '18K' ? ($product->sale_price * 0.85) : $product->sale_price) : ($purity === '18K' ? ($product->price * 0.85) : $product->price);
+                        $whatsappMsg = "Hi House of Aval, I am interested in ordering:\n\n*{$product->name}*\nPurity: {$purity}\nQty: {$quantity}\nEstimated Price: ₹" . number_format($calculatedPrice * $quantity) . "\n\nProduct Link: " . urlencode(url()->current());
+                    @endphp
+                    <a href="https://wa.me/{{ $whatsappNumber }}?text={!! urlencode($whatsappMsg) !!}" 
                        target="_blank"
-                       class="flex-1 btn-gold justify-center group overflow-hidden bg-[#25D366] !border-none !text-white shadow-[#25D366]/20">
-                        <i class="fab fa-whatsapp mr-4 text-lg transition-transform group-hover:scale-125"></i>
+                       class="flex-1 inline-flex justify-center items-center bg-[#25D366] text-white px-8 py-4 text-[0.7rem] uppercase tracking-[0.2em] font-bold rounded-sm shadow-xl shadow-[#25D366]/10 hover:bg-[#20ba59] transition-all duration-500 hover:scale-105">
+                        <i class="fab fa-whatsapp mr-3 text-base"></i>
                         <span>Order via WhatsApp</span>
                     </a>
                 </div>

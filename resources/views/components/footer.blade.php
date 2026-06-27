@@ -9,11 +9,20 @@
                 <p class="text-brand-cream/50 text-sm font-body leading-relaxed max-w-xs">
                     Curating brilliance since 1990. We specialize in handcrafted luxury jewelry that defines elegance and celebrates your unique radiance.
                 </p>
+                @php
+                    $whatsappRaw = \App\Models\SiteSetting::where('key', 'whatsapp_number')->value('value') ?? '+919876543210';
+                    $whatsappClean = preg_replace('/[^0-9]/', '', $whatsappRaw);
+                    $socialLinks = [
+                        'facebook' => 'https://facebook.com/houseofaval',
+                        'instagram' => 'https://www.instagram.com/houseofaval/',
+                        'whatsapp' => 'https://wa.me/' . $whatsappClean,
+                    ];
+                @endphp
                 <div class="flex space-x-5">
-                    @foreach(['facebook', 'instagram', 'whatsapp'] as $social)
-                        <a href="#" class="w-10 h-10 border border-brand-gold/20 flex items-center justify-center rounded-full hover:bg-brand-gold hover:text-brand-green hover:border-brand-gold transition-all duration-500 text-brand-gold/60">
-                            <span class="sr-only">{{ $social }}</span>
-                            <i class="fab fa-{{ $social }} text-sm"></i>
+                    @foreach($socialLinks as $platform => $url)
+                        <a href="{{ $url }}" target="_blank" class="w-10 h-10 border border-brand-gold/20 flex items-center justify-center rounded-full hover:bg-brand-gold hover:text-brand-green hover:border-brand-gold transition-all duration-500 text-brand-gold/60">
+                            <span class="sr-only">{{ $platform }}</span>
+                            <i class="fab fa-{{ $platform }} text-sm"></i>
                         </a>
                     @endforeach
                 </div>
@@ -26,7 +35,7 @@
                     <span class="absolute -bottom-2 left-0 w-8 h-px bg-brand-gold"></span>
                 </h4>
                 <ul class="space-y-4">
-                    @foreach(['Home' => '/', 'Collections' => '/collections', 'Our Story' => '/about', 'Contact' => '/contact'] as $name => $link)
+                    @foreach(['Home' => '/', 'Products' => '/products', 'Collections' => '/collections', 'Our Story' => '/about', 'Contact' => '/contact'] as $name => $link)
                         <li>
                             <a href="{{ url($link) }}" class="text-brand-cream/60 hover:text-brand-gold transition-colors text-sm font-body uppercase tracking-[0.2em] flex items-center group">
                                 <span class="w-0 h-px bg-brand-gold mr-0 transition-all duration-300 group-hover:w-4 group-hover:mr-3"></span>

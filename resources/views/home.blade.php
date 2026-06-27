@@ -16,44 +16,81 @@
     <!-- Best Sellers Section -->
     <section class="py-32 bg-brand-cream border-t border-brand-green/5">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-20">
-                <span class="text-brand-gold text-[0.6rem] uppercase tracking-[0.5em] mb-4 block font-bold">Timeless Classics</span>
-                <h2 class="text-4xl md:text-5xl font-heading text-brand-green">Our Best Sellers</h2>
+            <div class="text-center mb-24">
+                <span class="text-brand-gold text-[0.65rem] uppercase tracking-[0.5em] mb-4 block font-bold">Timeless Classics</span>
+                <h2 class="section-title text-brand-green">Our Best Sellers</h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
                 @foreach($bestSellers as $product)
-                    <div class="group relative bg-white border border-brand-gold/10 p-6 transition-all duration-500 hover:shadow-2xl flex flex-col justify-between">
+                    <div class="luxury-card group p-6 flex flex-col justify-between border border-brand-gold/10 hover:border-brand-gold/30">
                         <a href="{{ url('/products/' . $product->slug) }}" class="block space-y-6">
                             <!-- Image Container -->
-                            <div class="aspect-[4/5] overflow-hidden bg-brand-green relative border border-brand-gold/5">
-                                <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
-                                <div class="absolute inset-0 bg-brand-dark/45 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center duration-500">
-                                    <span class="bg-white text-brand-green px-8 py-3 text-[0.6rem] uppercase tracking-widest font-bold border border-brand-gold/20 shadow-lg">View Details</span>
+                            <div class="aspect-[4/5] overflow-hidden bg-brand-green relative border border-brand-gold/10">
+                                <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center duration-500">
+                                    <span class="bg-white text-brand-green px-6 py-3 text-[0.6rem] uppercase tracking-widest font-bold border border-brand-gold/20 shadow-xl tracking-[0.2em] transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">View Masterpiece</span>
                                 </div>
-                                <div class="absolute top-4 left-4 bg-brand-dark/85 text-brand-gold text-[0.55rem] uppercase tracking-widest px-3 py-1.5 border border-brand-gold/25 font-bold">
+                                <div class="absolute top-4 left-4 bg-brand-dark/90 text-brand-gold text-[0.55rem] uppercase tracking-widest px-3 py-1.5 border border-brand-gold/20 font-bold">
                                     Best Seller
                                 </div>
                             </div>
 
                             <!-- Text content -->
                             <div class="space-y-2 text-center">
-                                <span class="text-[0.6rem] text-brand-gold uppercase tracking-[0.2em] block font-semibold">{{ $product->collection->name ?? 'AVAL COLLECTION' }}</span>
-                                <h3 class="font-heading text-lg text-brand-green group-hover:text-brand-gold transition-colors leading-tight">{{ $product->name }}</h3>
+                                <span class="text-[0.55rem] text-brand-gold uppercase tracking-[0.3em] block font-semibold">{{ $product->collection->name ?? 'AVAL COLLECTION' }}</span>
+                                <h3 class="font-heading text-lg text-brand-green group-hover:text-brand-gold transition-colors duration-300 leading-tight">{{ $product->name }}</h3>
                                 
                                 <!-- Price Display -->
-                                <div class="pt-2">
+                                <div class="pt-2 font-body">
                                     @if($product->sale_price)
-                                        <span class="font-body font-bold text-sm text-brand-green">₹{{ number_format($product->sale_price) }}</span>
-                                        <span class="font-body text-xs text-brand-green/45 line-through ml-2">₹{{ number_format($product->price) }}</span>
+                                        <span class="font-bold text-sm text-brand-green">₹{{ number_format($product->sale_price) }}</span>
+                                        <span class="text-xs text-brand-green/45 line-through ml-2">₹{{ number_format($product->price) }}</span>
                                     @else
-                                        <span class="font-body font-bold text-sm text-brand-green">₹{{ number_format($product->price) }}</span>
+                                        <span class="font-bold text-sm text-brand-green">₹{{ number_format($product->price) }}</span>
                                     @endif
                                 </div>
                             </div>
                         </a>
                     </div>
                 @endforeach
+            </div>
+        </div>
+    </section>
+
+    <!-- Craftsmanship Trust Section -->
+    <section class="py-28 bg-brand-cream border-t border-brand-green/5">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="text-center p-8 bg-white border border-brand-gold/10 rounded-sm hover:border-brand-gold/30 transition-luxury">
+                    <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-brand-green/5 text-brand-gold rounded-full">
+                        <i class="fas fa-history text-2xl"></i>
+                    </div>
+                    <h3 class="font-heading text-xl text-brand-green mb-3">30+ Years Heritage</h3>
+                    <p class="text-brand-green/70 text-xs font-body leading-relaxed">
+                        Curating breathtaking masterpieces and handcrafted luxury jewelry with three decades of legacy.
+                    </p>
+                </div>
+                
+                <div class="text-center p-8 bg-white border border-brand-gold/10 rounded-sm hover:border-brand-gold/30 transition-luxury">
+                    <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-brand-green/5 text-brand-gold rounded-full">
+                        <i class="fas fa-award text-2xl"></i>
+                    </div>
+                    <h3 class="font-heading text-xl text-brand-green mb-3">BIS 916 Hallmarked</h3>
+                    <p class="text-brand-green/70 text-xs font-body leading-relaxed">
+                        Every single piece goes through strict certification to verify exact purity and absolute trust.
+                    </p>
+                </div>
+
+                <div class="text-center p-8 bg-white border border-brand-gold/10 rounded-sm hover:border-brand-gold/30 transition-luxury">
+                    <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-brand-green/5 text-brand-gold rounded-full">
+                        <i class="fas fa-pencil-ruler text-2xl"></i>
+                    </div>
+                    <h3 class="font-heading text-xl text-brand-green mb-3">Bespoke Designing</h3>
+                    <p class="text-brand-green/70 text-xs font-body leading-relaxed">
+                        Work directly with our designer boutique to customize pieces custom to your personality.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -80,7 +117,9 @@
     <section class="py-32 bg-brand-cream">
         <div class="container mx-auto px-6 text-center">
             <span class="text-brand-gold text-[0.6rem] uppercase tracking-[0.5em] mb-4 block font-bold">Follow Our Journey</span>
-            <h2 class="text-4xl md:text-5xl font-heading text-brand-green mb-16">@AVALJEWELS</h2>
+            <h2 class="text-4xl md:text-5xl font-heading text-brand-green mb-16 hover:text-brand-gold transition-colors">
+                <a href="https://www.instagram.com/houseofaval/" target="_blank">@houseofaval</a>
+            </h2>
             <x-instagram-gallery :items="[
                 ['image' => asset('images/earrings.png')],
                 ['image' => asset('images/necklace.png')],

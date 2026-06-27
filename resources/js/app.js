@@ -1,9 +1,4 @@
-import './bootstrap';
-import Alpine from 'alpinejs';
-
-window.Alpine = Alpine;
-
-Alpine.start();
+// Alpine is automatically loaded and started by Livewire v3. Do not import or start it manually here to avoid conflicts.
 
 // Navbar Scroll Logic
 document.addEventListener('DOMContentLoaded', () => {

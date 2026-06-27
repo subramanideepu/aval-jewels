@@ -25,11 +25,13 @@
 
 @layer components {
     .btn-gold {
-        @apply bg-brand-gold text-white px-8 py-3 font-body text-sm uppercase tracking-widest transition-luxury border border-brand-gold hover:bg-transparent hover:text-brand-gold;
+        @apply bg-brand-gold text-white px-8 py-3 font-body text-sm uppercase tracking-widest border border-brand-gold hover:bg-transparent hover:text-brand-gold;
+        transition: var(--transition-luxury);
     }
 
     .btn-outline-gold {
-        @apply border border-brand-gold text-brand-gold px-8 py-3 font-body text-sm uppercase tracking-widest transition-luxury hover:bg-brand-gold hover:text-white;
+        @apply border border-brand-gold text-brand-gold px-8 py-3 font-body text-sm uppercase tracking-widest hover:bg-brand-gold hover:text-white;
+        transition: var(--transition-luxury);
     }
 
     .gold-glow {
@@ -63,11 +65,12 @@
 }
 
 .luxury-card {
-    @apply bg-white transition-luxury overflow-hidden;
+    @apply bg-white overflow-hidden;
+    transition: var(--transition-luxury);
     box-shadow: 0 10px 30px rgba(36, 46, 28, 0.05);
 }
 
 .luxury-card:hover {
-    @apply -translate-y-2;
+    transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(36, 46, 28, 0.1);
 }

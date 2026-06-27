@@ -1,8 +1,6 @@
 <nav id="main-nav" 
-     x-data="{ open: false, scrolled: false }" 
-     x-init="window.addEventListener('scroll', () => scrolled = window.scrollY > 50)"
-     :class="scrolled ? 'bg-brand-green/90 backdrop-blur-lg py-3 shadow-2xl border-b border-brand-gold/10 shadow-brand-dark/30' : 'bg-transparent py-6'"
-     class="fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out">
+     x-data="{ open: false }" 
+     class="fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out bg-brand-green/95 backdrop-blur-lg py-3 shadow-2xl border-b border-brand-gold/10 shadow-brand-dark/30">
     <div class="container mx-auto px-6 flex justify-between items-center">
         <!-- Logo -->
         <x-brand-logo size="sm" />
@@ -11,6 +9,7 @@
         <div class="hidden lg:flex items-center space-x-12">
             @foreach([
                 ['name' => 'Home', 'link' => '/'],
+                ['name' => 'Products', 'link' => '/products'],
                 ['name' => 'Collections', 'link' => '/collections'],
                 ['name' => 'Our Story', 'link' => '/about'],
                 ['name' => 'Contact', 'link' => '/contact']
@@ -65,6 +64,7 @@
                 <x-brand-logo size="lg" :link="false" class="mb-6" />
 
                 <a href="{{ url('/') }}" @click="open = false" class="text-2xl font-heading text-white hover:text-brand-gold transition-colors tracking-widest">HOME</a>
+                <a href="{{ url('/products') }}" @click="open = false" class="text-2xl font-heading text-white hover:text-brand-gold transition-colors tracking-widest">PRODUCTS</a>
                 <a href="{{ url('/collections') }}" @click="open = false" class="text-2xl font-heading text-white hover:text-brand-gold transition-colors tracking-widest">COLLECTIONS</a>
                 <a href="{{ url('/about') }}" @click="open = false" class="text-2xl font-heading text-white hover:text-brand-gold transition-colors tracking-widest">OUR STORY</a>
                 <a href="{{ url('/contact') }}" @click="open = false" class="text-2xl font-heading text-white hover:text-brand-gold transition-colors tracking-widest">CONTACT</a>

@@ -20,6 +20,7 @@ Route::get('/collections', function () {
     return view('collections', compact('collections'));
 });
 
+Route::get('/products', \App\Livewire\Products\ProductCatalog::class)->name('products.index');
 Route::get('/products/{slug}', \App\Livewire\Products\ProductDetails::class)->name('products.show');
 
 Route::get('/checkout', \App\Livewire\Checkout::class)->name('checkout');
