@@ -9,7 +9,6 @@
         <div class="hidden lg:flex items-center space-x-12">
             @foreach([
                 ['name' => 'Home', 'link' => '/'],
-                ['name' => 'Products', 'link' => '/products'],
                 ['name' => 'Collections', 'link' => '/collections'],
                 ['name' => 'Our Story', 'link' => '/about'],
                 ['name' => 'Contact', 'link' => '/contact']
@@ -64,7 +63,6 @@
                 <x-brand-logo size="lg" :link="false" class="mb-6" />
 
                 <a href="{{ url('/') }}" @click="open = false" class="text-2xl font-heading text-white hover:text-brand-gold transition-colors tracking-widest">HOME</a>
-                <a href="{{ url('/products') }}" @click="open = false" class="text-2xl font-heading text-white hover:text-brand-gold transition-colors tracking-widest">PRODUCTS</a>
                 <a href="{{ url('/collections') }}" @click="open = false" class="text-2xl font-heading text-white hover:text-brand-gold transition-colors tracking-widest">COLLECTIONS</a>
                 <a href="{{ url('/about') }}" @click="open = false" class="text-2xl font-heading text-white hover:text-brand-gold transition-colors tracking-widest">OUR STORY</a>
                 <a href="{{ url('/contact') }}" @click="open = false" class="text-2xl font-heading text-white hover:text-brand-gold transition-colors tracking-widest">CONTACT</a>

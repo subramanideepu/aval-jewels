@@ -35,7 +35,7 @@
                     <span class="absolute -bottom-2 left-0 w-8 h-px bg-brand-gold"></span>
                 </h4>
                 <ul class="space-y-4">
-                    @foreach(['Home' => '/', 'Products' => '/products', 'Collections' => '/collections', 'Our Story' => '/about', 'Contact' => '/contact'] as $name => $link)
+                    @foreach(['Home' => '/', 'Collections' => '/collections', 'Our Story' => '/about', 'Contact' => '/contact'] as $name => $link)
                         <li>
                             <a href="{{ url($link) }}" class="text-brand-cream/60 hover:text-brand-gold transition-colors text-sm font-body uppercase tracking-[0.2em] flex items-center group">
                                 <span class="w-0 h-px bg-brand-gold mr-0 transition-all duration-300 group-hover:w-4 group-hover:mr-3"></span>
