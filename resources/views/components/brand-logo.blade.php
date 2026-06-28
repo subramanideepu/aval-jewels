@@ -6,12 +6,12 @@
 
 @php
     $sizes = [
-        'xs' => 'h-8',
-        'sm' => 'h-10',
-        'md' => 'h-14 md:h-16',
-        'lg' => 'h-20 md:h-24',
-        'xl' => 'h-28 md:h-36',
-        '2xl' => 'h-36 md:h-48',
+        'xs' => 'h-10',
+        'sm' => 'h-14 md:h-16',
+        'md' => 'h-20 md:h-24',
+        'lg' => 'h-28 md:h-32',
+        'xl' => 'h-36 md:h-44',
+        '2xl' => 'h-44 md:h-56',
     ];
     $sizeClass = $sizes[$size] ?? $sizes['md'];
 @endphp
