@@ -26,10 +26,16 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
-            ->login()
+            ->login(\App\Filament\Pages\Auth\Login::class)
+            ->brandName('AVAL JEWELS')
+            ->brandLogo(fn () => view('filament.brand-logo'))
+            ->brandLogoHeight('3rem')
+            ->favicon(asset('assets/images/branding/aval-jewels-favicon.png'))
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => '#C5A059',
+                'gray' => Color::Gray,
             ])
+            ->font('Montserrat')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
