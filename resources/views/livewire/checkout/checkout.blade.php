@@ -22,7 +22,10 @@
                         <p class="font-bold mb-3 uppercase tracking-widest text-brand-gold">WhatsApp Order Redirect</p>
                         We have opened WhatsApp to connect you directly with our designer concierge. If you were not redirected automatically, please click below to send your order.
                         <a href="https://wa.me/{{ $whatsappNumber }}?text={{ urlencode('Hi House of Aval, I would like to finalize my jewelry order #' . $placedOrder->id) }}" target="_blank" class="mt-4 bg-[#25D366] text-white px-8 py-3 text-xs uppercase tracking-widest font-bold rounded-sm shadow-lg shadow-[#25D366]/10 hover:bg-[#20ba59] transition-all duration-500 hover:scale-105 inline-flex items-center">
-                            <i class="fab fa-whatsapp mr-3 text-base"></i> Send Order Specification
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2.5 inline-block fill-current" viewBox="0 0 24 24">
+                                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.891 11.891-11.891 3.181 0 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.481 8.403 0 6.556-5.332 11.891-11.891 11.891-2.093 0-4.134-.544-5.945-1.589l-6.049 1.589zm5.945-3.384c1.62.904 3.4 1.383 5.232 1.383 5.461 0 9.904-4.444 9.904-9.906 0-2.642-1.03-5.127-2.9-6.996s-4.355-2.9-6.999-2.9c-5.462 0-9.906 4.444-9.906 9.906 0 1.831.503 3.611 1.458 5.231l-1.017 3.712 3.811-.93z"/>
+                            </svg>
+                            <span>Send Order Specification</span>
                         </a>
                     </div>
                 @elseif($paymentMethod === 'simulated_upi')
@@ -144,7 +147,10 @@
                                 <input type="radio" wire:model.live="paymentMethod" value="whatsapp" class="mt-1 text-brand-gold focus:ring-brand-gold border-brand-green/20">
                                 <div class="text-[0.7rem]">
                                     <p class="font-bold text-brand-green uppercase tracking-wider mb-1 flex items-center">
-                                        <i class="fab fa-whatsapp text-base text-[#25D366] mr-2"></i> Order via WhatsApp
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4.5 w-4.5 text-[#25D366] mr-2 inline-block fill-current" viewBox="0 0 24 24">
+                                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.891 11.891-11.891 3.181 0 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.481 8.403 0 6.556-5.332 11.891-11.891 11.891-2.093 0-4.134-.544-5.945-1.589l-6.049 1.589zm5.945-3.384c1.62.904 3.4 1.383 5.232 1.383 5.461 0 9.904-4.444 9.904-9.906 0-2.642-1.03-5.127-2.9-6.996s-4.355-2.9-6.999-2.9c-5.462 0-9.906 4.444-9.906 9.906 0 1.831.503 3.611 1.458 5.231l-1.017 3.712 3.811-.93z"/>
+                                        </svg>
+                                        <span>Order via WhatsApp</span>
                                     </p>
                                     <p class="text-brand-green/60 font-light leading-relaxed">Direct connection with our designer concierge to confirm payment and custom requests.</p>
                                 </div>

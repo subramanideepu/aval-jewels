@@ -23,10 +23,11 @@
 
         <!-- Icons/CTA -->
         <div class="flex items-center space-x-6 md:space-x-8">
+            <livewire:wishlist.wishlist-icon />
             <livewire:cart.cart-icon />
 
             <a href="{{ url('/contact') }}" class="hidden md:inline-flex bg-transparent border border-brand-gold text-brand-gold px-8 py-2.5 text-[0.6rem] uppercase tracking-widest font-bold hover:bg-brand-gold hover:text-brand-green transition-all duration-500 shadow-lg shadow-brand-gold/10">
-                Book Appointment
+                Book Private Viewing
             </a>
 
             <!-- Mobile Toggle -->
@@ -64,6 +65,7 @@
 
                 <a href="{{ url('/') }}" @click="open = false" class="text-2xl font-heading text-white hover:text-brand-gold transition-colors tracking-widest">HOME</a>
                 <a href="{{ url('/collections') }}" @click="open = false" class="text-2xl font-heading text-white hover:text-brand-gold transition-colors tracking-widest">COLLECTIONS</a>
+                <a href="{{ route('wishlist.index') }}" @click="open = false" class="text-2xl font-heading text-white hover:text-brand-gold transition-colors tracking-widest">WISHLIST</a>
                 <a href="{{ url('/about') }}" @click="open = false" class="text-2xl font-heading text-white hover:text-brand-gold transition-colors tracking-widest">OUR STORY</a>
                 <a href="{{ url('/contact') }}" @click="open = false" class="text-2xl font-heading text-white hover:text-brand-gold transition-colors tracking-widest">CONTACT</a>
                 

@@ -87,6 +87,10 @@
                                         <div class="absolute top-3 left-3 bg-brand-dark/95 text-brand-gold text-[0.5rem] uppercase tracking-widest px-2.5 py-1.5 border border-brand-gold/20 font-bold">
                                             Designer
                                         </div>
+                                        <!-- Wishlist Toggle -->
+                                        <div class="absolute top-3 right-3 z-20">
+                                            <livewire:wishlist.wishlist-toggle :product-id="$product->id" :variant="'icon'" :wire:key="'wishlist-catalog-'.$product->id" />
+                                        </div>
                                     </div>
 
                                     <!-- Product Details -->

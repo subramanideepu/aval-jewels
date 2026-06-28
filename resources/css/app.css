@@ -74,3 +74,31 @@
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(36, 46, 28, 0.1);
 }
+
+/* Luxury Editorial Utilities */
+.vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+}
+
+.luxury-outline-frame {
+    @apply border border-brand-gold/20 relative;
+}
+
+.luxury-outline-frame::before {
+    content: '';
+    @apply absolute -inset-3 border border-brand-gold/10 pointer-events-none transition-all duration-1000;
+}
+
+.luxury-outline-frame:hover::before {
+    @apply -inset-1.5 border-brand-gold/30;
+}
+
+.text-editorial-gold {
+    @apply font-heading italic text-brand-gold-light;
+}
+
+.luxury-overlay-panel {
+    @apply bg-brand-cream border border-brand-gold/20 shadow-2xl p-8 z-10 transition-all duration-700;
+}

@@ -111,7 +111,7 @@
                 </div>
 
                 <!-- Add to Bag & Checkout Actions -->
-                <div class="flex flex-col sm:flex-row gap-6 pt-4">
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
                     <button wire:click="addToCart" class="flex-1 btn-gold justify-center group relative overflow-hidden text-center py-4 rounded-sm flex items-center">
                         <i class="fas fa-shopping-bag mr-3 text-sm"></i>
                         <span>Add to bag</span>
@@ -123,10 +123,16 @@
                     @endphp
                     <a href="https://wa.me/{{ $whatsappNumber }}?text={!! urlencode($whatsappMsg) !!}" 
                        target="_blank"
-                       class="flex-1 inline-flex justify-center items-center bg-[#25D366] text-white px-8 py-4 text-[0.7rem] uppercase tracking-[0.2em] font-bold rounded-sm shadow-xl shadow-[#25D366]/10 hover:bg-[#20ba59] transition-all duration-500 hover:scale-105">
-                        <i class="fab fa-whatsapp mr-3 text-base"></i>
-                        <span>Order via WhatsApp</span>
+                       class="flex-1 inline-flex justify-center items-center bg-[#25D366] text-white px-6 py-4 text-[0.7rem] uppercase tracking-[0.2em] font-bold rounded-sm shadow-xl shadow-[#25D366]/10 hover:bg-[#20ba59] transition-all duration-500 hover:scale-105">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4.5 w-4.5 mr-2.5 fill-current" viewBox="0 0 24 24">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.891 11.891-11.891 3.181 0 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.481 8.403 0 6.556-5.332 11.891-11.891 11.891-2.093 0-4.134-.544-5.945-1.589l-6.049 1.589zm5.945-3.384c1.62.904 3.4 1.383 5.232 1.383 5.461 0 9.904-4.444 9.904-9.906 0-2.642-1.03-5.127-2.9-6.996s-4.355-2.9-6.999-2.9c-5.462 0-9.906 4.444-9.906 9.906 0 1.831.503 3.611 1.458 5.231l-1.017 3.712 3.811-.93z"/>
+                        </svg>
+                        <span>WhatsApp Order</span>
                     </a>
+
+                    <div class="flex-1">
+                        <livewire:wishlist.wishlist-toggle :product-id="$product->id" :variant="'button'" :wire:key="'wishlist-details-'.$product->id" />
+                    </div>
                 </div>
 
                 <!-- Features/Badges -->

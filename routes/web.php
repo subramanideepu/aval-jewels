@@ -33,4 +33,7 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/wishlist', \App\Livewire\Wishlist\WishlistIndex::class)->name('wishlist.index');
+
+
 
