@@ -9,22 +9,22 @@
 
             <div class="space-y-10">
                 <div class="space-y-4">
-                    <span class="text-brand-gold text-[0.6rem] uppercase tracking-[0.5em] font-bold">The Heritage</span>
-                    <h2 class="text-5xl md:text-6xl font-heading text-brand-green leading-tight">Three Decades of<br>Pure Brilliance</h2>
+                    <span class="text-brand-gold text-[0.6rem] uppercase tracking-[0.5em] font-bold">Our Story</span>
+                    <h2 class="text-5xl md:text-6xl font-heading text-brand-green leading-tight">Elegance in<br>Every Moment</h2>
                 </div>
                 
                 <p class="text-brand-green/70 text-lg font-body leading-relaxed font-light">
-                    Founded in 1990, <span class="font-bold text-brand-green">AVAL JEWELS</span> began with a single vision: to create jewelry that doesn't just adorn, but empowers. Our journey from a boutique workshop to Chennai's premier luxury jeweler is paved with trust, artistry, and an unwavering commitment to quality.
+                    Founded in 2022 by <span class="font-bold text-brand-green">Pushpa Menon</span>, <span class="font-bold text-brand-green">AVAL JEWELS</span> began with a single vision: to create beautifully crafted jewelry that brings you everyday elegance. At Aval Jewels, we invite you to wear your confidence every day.
                 </p>
 
                 <p class="text-brand-green/70 text-lg font-body leading-relaxed font-light">
-                    Every piece in our collection is a labor of love, handcrafted by master artisans who have preserved traditional Indian techniques while embracing modern minimal aesthetics. We believe that true luxury lies in the details—the precision of a setting, the fire of a diamond, and the story of the wearer.
+                    From simple, lightweight designs perfect for daily wear to stunning pieces made for weddings and celebrations, every creation is designed to enhance your confidence and style. With a perfect blend of tradition and modern charm, Aval Jewels helps you shine in every moment.
                 </p>
 
                 <div class="grid grid-cols-2 gap-10 pt-6">
                     <div>
-                        <span class="block text-4xl font-heading text-brand-gold mb-2">100%</span>
-                        <span class="text-[0.6rem] uppercase tracking-widest text-brand-green/40 font-bold">Hallmarked Gold</span>
+                        <span class="block text-4xl font-heading text-brand-gold mb-2">Premium</span>
+                        <span class="text-[0.6rem] uppercase tracking-widest text-brand-green/40 font-bold">AAA-Grade Quality</span>
                     </div>
                     <div>
                         <span class="block text-4xl font-heading text-brand-gold mb-2">Bespoke</span>

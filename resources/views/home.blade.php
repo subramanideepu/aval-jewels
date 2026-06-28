@@ -4,9 +4,9 @@
     
     <section class="py-24 bg-brand-green text-white text-center">
         <div class="container mx-auto px-6 max-w-4xl">
-            <h2 class="text-3xl md:text-5xl font-heading mb-8">Wear Your Confidence</h2>
+            <h2 class="text-3xl md:text-5xl font-heading mb-8">Wear Your Confidence Everyday</h2>
             <p class="text-brand-cream/60 text-lg font-body leading-relaxed">
-                At AVAL JEWELS, we don't just sell jewelry; we curate moments of brilliance that last a lifetime. Explore our heritage of three decades.
+                At AVAL JEWELS, we bring you beautifully crafted jewelry for both everyday elegance and special occasions. Discover our collections designed to enhance your confidence and style.
             </p>
         </div>
     </section>
@@ -64,11 +64,11 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <div class="text-center p-8 bg-white border border-brand-gold/10 rounded-sm hover:border-brand-gold/30 transition-luxury">
                     <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-brand-green/5 text-brand-gold rounded-full">
-                        <i class="fas fa-history text-2xl"></i>
+                        <i class="fas fa-gem text-2xl"></i>
                     </div>
-                    <h3 class="font-heading text-xl text-brand-green mb-3">30+ Years Heritage</h3>
+                    <h3 class="font-heading text-xl text-brand-green mb-3">Everyday Elegance</h3>
                     <p class="text-brand-green/70 text-xs font-body leading-relaxed">
-                        Curating breathtaking masterpieces and handcrafted luxury jewelry with three decades of legacy.
+                        From simple, lightweight designs perfect for daily wear to stunning pieces made for weddings and celebrations.
                     </p>
                 </div>
                 
@@ -76,9 +76,9 @@
                     <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-brand-green/5 text-brand-gold rounded-full">
                         <i class="fas fa-award text-2xl"></i>
                     </div>
-                    <h3 class="font-heading text-xl text-brand-green mb-3">BIS 916 Hallmarked</h3>
+                    <h3 class="font-heading text-xl text-brand-green mb-3">AAA-Grade Quality</h3>
                     <p class="text-brand-green/70 text-xs font-body leading-relaxed">
-                        Every single piece goes through strict certification to verify exact purity and absolute trust.
+                        Beautifully crafted with a premium finish, anti-tarnish coating, and high-quality materials.
                     </p>
                 </div>
 
@@ -88,7 +88,7 @@
                     </div>
                     <h3 class="font-heading text-xl text-brand-green mb-3">Bespoke Designing</h3>
                     <p class="text-brand-green/70 text-xs font-body leading-relaxed">
-                        Work directly with our designer boutique to customize pieces custom to your personality.
+                        Work directly with our designer boutique to customize pieces custom to your personality and style.
                     </p>
                 </div>
             </div>

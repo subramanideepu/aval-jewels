@@ -6,8 +6,8 @@
             <!-- Brand Section -->
             <div class="space-y-8">
                 <x-brand-logo size="md" />
-                <p class="text-brand-cream/50 text-sm font-body leading-relaxed max-w-xs">
-                    Curating brilliance since 1990. We specialize in handcrafted luxury jewelry that defines elegance and celebrates your unique radiance.
+                <p class="text-brand-cream/50 text-xs font-body leading-relaxed max-w-xs">
+                    Beautifully crafted jewelry for both everyday elegance and special occasions since 2022. Wear your confidence every day.
                 </p>
                 @php
                     $whatsappRaw = \App\Models\SiteSetting::where('key', 'whatsapp_number')->value('value') ?? '+919876543210';

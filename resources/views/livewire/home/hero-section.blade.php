@@ -12,7 +12,7 @@
         <x-hero-section 
             image="{{ asset('images/hero.png') }}" 
             title="Wear Your<br>Confidence Every Day" 
-            subtitle="Est. 1990" 
+            subtitle="Est. 2022" 
             ctaText="Explore Collections" 
             ctaLink="/collections" 
         />

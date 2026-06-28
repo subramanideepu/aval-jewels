@@ -111,7 +111,6 @@
                                 <div class="flex justify-between items-center text-xs">
                                     <div class="space-y-1 max-w-[70%]">
                                         <h4 class="font-bold text-brand-green truncate">{{ $item['name'] }}</h4>
-                                        <span class="text-[0.55rem] text-brand-gold uppercase tracking-wider block">{{ $item['purity'] }} Hallmarked</span>
                                         <span class="text-[0.55rem] text-brand-green/45 block">Qty: {{ $item['quantity'] }}</span>
                                     </div>
                                     <span class="font-body text-brand-green/80 font-medium">₹{{ number_format($item['subtotal']) }}</span>

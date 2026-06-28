@@ -45,7 +45,7 @@
                                     </div>
                                     <!-- Badge -->
                                     <div class="absolute top-4 left-4 bg-brand-dark/90 text-brand-gold text-[0.55rem] uppercase tracking-widest px-3 py-1.5 border border-brand-gold/20 font-bold">
-                                        BIS Hallmarked
+                                        Designer
                                     </div>
                                 </div>
 

@@ -54,9 +54,6 @@
                                     </div>
                                     <div class="space-y-1.5">
                                         <h4 class="font-heading text-sm text-white tracking-wide leading-tight">{{ $item['name'] }}</h4>
-                                        <div class="flex items-center space-x-3 text-[0.6rem] text-brand-gold uppercase tracking-widest font-semibold">
-                                            <span>Purity: {{ $item['purity'] }}</span>
-                                        </div>
                                         <div class="text-xs font-semibold text-brand-cream/80 font-body">
                                             ₹{{ number_format($item['price']) }} x {{ $item['quantity'] }}
                                         </div>

@@ -7,7 +7,7 @@
             <div class="absolute inset-0 bg-brand-green/60"></div>
         </div>
         <div class="container mx-auto px-6 relative z-10 text-center">
-            <span class="text-brand-gold text-[0.6rem] uppercase tracking-[0.6em] mb-8 block font-bold">EST. 1990</span>
+            <span class="text-brand-gold text-[0.6rem] uppercase tracking-[0.6em] mb-8 block font-bold">EST. 2022</span>
             <h1 class="text-6xl md:text-8xl text-white font-heading leading-tight">A Legacy of<br>Radiance</h1>
         </div>
     </section>

@@ -57,24 +57,23 @@
                     <h1 class="text-4xl md:text-6xl font-heading text-brand-green leading-tight">{{ $product->name }}</h1>
                 </div>
 
-                <!-- Estimated Price -->
+                <!-- Product Price -->
                 <div class="bg-white p-6 border-l-4 border-brand-gold shadow-lg shadow-brand-green/5">
                     <div class="flex items-baseline space-x-4">
                         @if($product->sale_price)
                             <span class="text-4xl font-body font-bold text-brand-green">
-                                ₹{{ number_format($purity === '18K' ? ($product->sale_price * 0.85) : $product->sale_price) }}
+                                ₹{{ number_format($product->sale_price) }}
                             </span>
                             <span class="text-lg text-brand-green/40 line-through">
-                                ₹{{ number_format($purity === '18K' ? ($product->price * 0.85) : $product->price) }}
+                                ₹{{ number_format($product->price) }}
                             </span>
                         @else
                             <span class="text-4xl font-body font-bold text-brand-green">
-                                ₹{{ number_format($purity === '18K' ? ($product->price * 0.85) : $product->price) }}
+                                ₹{{ number_format($product->price) }}
                             </span>
                         @endif
-                        <span class="text-[0.6rem] text-brand-gold uppercase tracking-[0.2em] font-bold">Estimated Price</span>
+                        <span class="text-[0.6rem] text-brand-gold uppercase tracking-[0.2em] font-bold">Price</span>
                     </div>
-                    <p class="text-[0.65rem] text-brand-green/50 mt-2">Price updates dynamically based on gold purity choice.</p>
                 </div>
 
                 <div class="prose prose-brand max-w-none">
@@ -98,23 +97,8 @@
                 </div>
                 @endif
 
-                <!-- Product Buying Options (Purity & Quantity) -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 border-b border-brand-green/10 pb-10">
-                    <!-- Purity Selection -->
-                    <div class="space-y-3">
-                        <label class="text-[0.6rem] uppercase tracking-widest text-brand-green/60 font-bold block">Select Metal Purity</label>
-                        <div class="relative">
-                            <select wire:model.live="purity" class="w-full bg-transparent border border-brand-green/20 px-4 py-3 focus:outline-none focus:border-brand-gold transition-colors font-body text-xs text-brand-green appearance-none pr-10">
-                                @foreach($product->purity_options ?? ['18K', '22K'] as $option)
-                                    <option value="{{ $option }}">{{ $option }} Hallmarked Gold</option>
-                                @endforeach
-                            </select>
-                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-brand-gold">
-                                <i class="fas fa-chevron-down text-xs"></i>
-                            </div>
-                        </div>
-                    </div>
-
+                <!-- Product Buying Options (Quantity) -->
+                <div class="border-b border-brand-green/10 pb-10">
                     <!-- Quantity Selection -->
                     <div class="space-y-3">
                         <label class="text-[0.6rem] uppercase tracking-widest text-brand-green/60 font-bold block">Quantity</label>
@@ -134,8 +118,8 @@
                     </button>
                     
                     @php
-                        $calculatedPrice = $product->sale_price ? ($purity === '18K' ? ($product->sale_price * 0.85) : $product->sale_price) : ($purity === '18K' ? ($product->price * 0.85) : $product->price);
-                        $whatsappMsg = "Hi House of Aval, I am interested in ordering:\n\n*{$product->name}*\nPurity: {$purity}\nQty: {$quantity}\nEstimated Price: ₹" . number_format($calculatedPrice * $quantity) . "\n\nProduct Link: " . urlencode(url()->current());
+                        $calculatedPrice = $product->sale_price ?? $product->price;
+                        $whatsappMsg = "Hi House of Aval, I am interested in ordering:\n\n*{$product->name}*\nQty: {$quantity}\nPrice: ₹" . number_format($calculatedPrice * $quantity) . "\n\nProduct Link: " . urlencode(url()->current());
                     @endphp
                     <a href="https://wa.me/{{ $whatsappNumber }}?text={!! urlencode($whatsappMsg) !!}" 
                        target="_blank"
@@ -149,11 +133,11 @@
                 <div class="flex items-center space-x-10 pt-10 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
                     <div class="flex flex-col items-center">
                         <img src="https://img.icons8.com/ios/50/D4AF37/diamond--v1.png" class="w-8 h-8 mb-2">
-                        <span class="text-[0.5rem] uppercase tracking-widest font-bold">Ethically Sourced</span>
+                        <span class="text-[0.5rem] uppercase tracking-widest font-bold">Lightweight Comfort</span>
                     </div>
                     <div class="flex flex-col items-center">
                         <img src="https://img.icons8.com/ios/50/D4AF37/guarantee.png" class="w-8 h-8 mb-2">
-                        <span class="text-[0.5rem] uppercase tracking-widest font-bold">BIS Hallmarked</span>
+                        <span class="text-[0.5rem] uppercase tracking-widest font-bold">AAA-Grade Quality</span>
                     </div>
                     <div class="flex flex-col items-center">
                         <img src="https://img.icons8.com/ios/50/D4AF37/hand-crafted.png" class="w-8 h-8 mb-2">

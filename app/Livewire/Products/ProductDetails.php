@@ -12,7 +12,7 @@ class ProductDetails extends Component
     public $product;
     public $relatedProducts;
     public $quantity = 1;
-    public $purity = '22K';
+    public $purity = 'Standard';
 
     public $whatsappNumber = '';
 

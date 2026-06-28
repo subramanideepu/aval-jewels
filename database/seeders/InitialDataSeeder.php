@@ -22,7 +22,7 @@ class InitialDataSeeder extends Seeder
         // Collections
         $collectionsData = [
             ['name' => 'The Bridal Heritage', 'image' => 'images/necklace.png'],
-            ['name' => 'Minimalist Gold', 'image' => 'images/earrings.png'],
+            ['name' => 'Everyday Elegance', 'image' => 'images/earrings.png'],
             ['name' => 'Royal Bangles', 'image' => 'images/bangles.png'],
         ];
 
@@ -41,23 +41,23 @@ class InitialDataSeeder extends Seeder
                     'collection_id' => $collection->id,
                     'name' => $item['name'] . ' Masterpiece ' . $i,
                     'slug' => Str::slug($item['name'] . ' Masterpiece ' . $i),
-                    'description' => 'A beautiful masterpiece from our ' . $item['name'] . ' collection. Handcrafted with precision and passion.',
+                    'description' => 'A beautiful masterpiece from our ' . $item['name'] . ' collection. Designed for everyday elegance and special occasions, enhancing your confidence and style with a perfect blend of tradition and modern charm.',
                     'specifications' => [
-                        'Material' => '22K Hallmarked Gold',
-                        'Weight' => (20 + $i) . ' Grams',
-                        'Purity' => '916 BIS Hallmarked',
-                        'Gemstone' => $i % 2 == 0 ? 'Certified Diamonds' : 'Natural Rubies',
+                        'Material' => $i % 2 === 0 ? 'Premium 18K Gold Plated Brass' : 'High-Shine Rhodium Plated Alloy',
+                        'Weight' => (5 + $i) . ' Grams',
+                        'Finish' => 'Anti-Tarnish Polish',
+                        'Stones' => $i % 2 == 0 ? 'AAA-Grade Cubic Zirconia' : 'Premium Faux Pearls',
                     ],
                     'image' => $item['image'],
                     'gallery' => [$item['image'], $item['image']],
-                    'price' => 50000 + ($i * 12500),
-                    'sale_price' => $i % 3 === 0 ? (50000 + ($i * 12500)) * 0.9 : null,
+                    'price' => 2000 + ($i * 500),
+                    'sale_price' => $i % 3 === 0 ? (2000 + ($i * 500)) * 0.9 : null,
                     'stock' => 15 - $i,
-                    'purity_options' => ['18K', '22K'],
+                    'purity_options' => ['Standard'],
                     'is_featured' => ($i == 1),
                     'is_best_seller' => ($i == 2),
                     'meta_title' => $item['name'] . ' Masterpiece ' . $i . ' | AVAL JEWELS',
-                    'meta_description' => 'Discover the exquisite ' . $item['name'] . ' Masterpiece ' . $i . ' at AVAL JEWELS. Handcrafted luxury jewelry.',
+                    'meta_description' => 'Discover the exquisite ' . $item['name'] . ' Masterpiece ' . $i . ' at AVAL JEWELS. Beautifully crafted designer jewelry.',
                 ]);
             }
         }
@@ -65,7 +65,7 @@ class InitialDataSeeder extends Seeder
         // Hero Banners
         HeroBanner::create([
             'title' => 'Wear Your Confidence Every Day',
-            'subtitle' => 'Explore the finest collection of luxury Indian jewelry.',
+            'subtitle' => 'Beautifully crafted jewelry for both everyday elegance and special occasions.',
             'image' => 'images/hero.png',
             'cta_text' => 'Explore Collections',
             'cta_link' => '/collections',

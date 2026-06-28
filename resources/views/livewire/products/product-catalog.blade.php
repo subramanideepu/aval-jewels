@@ -5,7 +5,7 @@
             <span class="text-brand-gold text-[0.6rem] uppercase tracking-[0.5em] font-bold mb-4 block">Our Catalog</span>
             <h1 class="text-5xl md:text-7xl font-heading text-brand-green leading-tight mb-6">The Boutique Shop</h1>
             <p class="text-brand-green/60 text-xs font-body max-w-md mx-auto leading-relaxed">
-                Discover Chennai's premier handcrafted heritage gold, certified diamonds, and precious gemstone masterpieces.
+                Discover our collection of beautifully crafted jewelry made for both everyday elegance and special occasions.
             </p>
         </div>
 
@@ -85,7 +85,7 @@
                                             <span class="bg-white text-brand-green px-5 py-3 text-[0.55rem] uppercase tracking-[0.2em] font-bold border border-brand-gold/20 shadow-xl transform translate-y-3 group-hover:translate-y-0 transition-transform duration-500">View Masterpiece</span>
                                         </div>
                                         <div class="absolute top-3 left-3 bg-brand-dark/95 text-brand-gold text-[0.5rem] uppercase tracking-widest px-2.5 py-1.5 border border-brand-gold/20 font-bold">
-                                            BIS 916
+                                            Designer
                                         </div>
                                     </div>
 

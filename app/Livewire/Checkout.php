@@ -77,7 +77,7 @@ class Checkout extends Component
             // Build text message for WhatsApp
             $msg = "Hi House of Aval, I would like to place an order (Order #{$order->id}):\n\n";
             foreach ($this->cartItems as $item) {
-                $msg .= "- {$item['quantity']}x {$item['name']} ({$item['purity']}) @ ₹" . number_format($item['price']) . "\n";
+                $msg .= "- {$item['quantity']}x {$item['name']} @ ₹" . number_format($item['price']) . "\n";
             }
             $msg .= "\nTotal Amount: ₹" . number_format($this->total) . "\n";
             $msg .= "Name: {$this->name}\n";

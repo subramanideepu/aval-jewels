@@ -17,9 +17,8 @@ class CartService
         foreach ($cart as $key => $item) {
             $product = Product::find($item['product_id']);
             if ($product) {
-                // Determine price based on purity (e.g. 22K gold is full price, 18K gold gets a 10% discount)
-                $basePrice = $product->sale_price ?? $product->price;
-                $price = $item['purity'] === '18K' ? $basePrice * 0.85 : $basePrice;
+                // Determine price directly from product pricing
+                $price = $product->sale_price ?? $product->price;
 
                 $items[] = [
                     'key' => $key,
@@ -38,7 +37,7 @@ class CartService
         return $items;
     }
 
-    public function add($productId, $quantity = 1, $purity = '22K')
+    public function add($productId, $quantity = 1, $purity = 'Standard')
     {
         $cart = Session::get($this->sessionKey, []);
         $key = $productId . '_' . $purity;
