@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Premium Gold Gradient -->
+    <linearGradient id="gold" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9A7B3E" />
+      <stop offset="25%" stop-color="#C5A059" />
+      <stop offset="50%" stop-color="#F3E5C8" />
+      <stop offset="75%" stop-color="#C5A059" />
+      <stop offset="100%" stop-color="#9A7B3E" />
+    </linearGradient>
+    <!-- Soft Glow Filter -->
+    <filter id="glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <!-- Background Shield: Rounded Square with Forest Green -->
+  <rect width="512" height="512" rx="128" fill="#242E1C" />
+  
+  <!-- Outer Gold Rim -->
+  <rect x="24" y="24" width="464" height="464" rx="104" fill="none" stroke="url(#gold)" stroke-width="6" opacity="0.8" />
+  
+  <!-- Inner Gold Rim -->
+  <rect x="36" y="36" width="440" height="440" rx="92" fill="none" stroke="url(#gold)" stroke-width="2" opacity="0.4" />
+
+  <!-- Center Jewel Emblem -->
+  <g transform="translate(256, 250)" filter="url(#glow)">
+    <!-- Gemstone Top Facets / Tiara Shapes -->
+    <polygon points="0,-120 -50,-70 50,-70" fill="url(#gold)" opacity="0.9" />
+    <polygon points="-50,-70 -90,-70 -50,-40" fill="url(#gold)" opacity="0.75" />
+    <polygon points="50,-70 90,-70 50,-40" fill="url(#gold)" opacity="0.75" />
+    <polygon points="-50,-70 -50,-40 0,-120" fill="url(#gold)" opacity="0.85" />
+    <polygon points="50,-70 50,-40 0,-120" fill="url(#gold)" opacity="0.85" />
+    <polygon points="-50,-40 50,-40 0,-120" fill="url(#gold)" opacity="0.95" />
+    
+    <!-- The main pillars of the letter A, stylized as faceted jewelry lines -->
+    <!-- Left Leg -->
+    <path d="M-15,-40 L-70,120 L-40,120 L-5,-20 Z" fill="url(#gold)" />
+    <!-- Right Leg -->
+    <path d="M15,-40 L70,120 L40,120 L5,-20 Z" fill="url(#gold)" />
+    <!-- Crossbar (Chevron/Diamond shape) -->
+    <polygon points="0,-10 -30,20 0,35 30,20" fill="url(#gold)" opacity="0.9" />
+    
+    <!-- Small Hanging Gem / Sparkle at the bottom of the crossbar -->
+    <polygon points="0,45 -8,57 0,69 8,57" fill="url(#gold)" />
+    
+    <!-- Sparkle Stars (Diamonds) around the emblem to signify luxury/jewelry shine -->
+    <g transform="translate(-130, -100) scale(0.6)">
+      <path d="M0,-30 L8,-8 L30,0 L8,8 L0,30 L-8,8 L-30,0 L-8,-8 Z" fill="url(#gold)" />
+    </g>
+    <g transform="translate(130, -100) scale(0.6)">
+      <path d="M0,-30 L8,-8 L30,0 L8,8 L0,30 L-8,8 L-30,0 L-8,-8 Z" fill="url(#gold)" />
+    </g>
+  </g>
+</svg>
